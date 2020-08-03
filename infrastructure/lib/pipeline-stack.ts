@@ -4,11 +4,9 @@ import { Construct, SecretValue, Stack, StackProps } from '@aws-cdk/core';
 import { CdkPipeline, SimpleSynthAction } from "@aws-cdk/pipelines";
 
 import {config} from '../config'
-import { PipelineStage } from './pipeline-stage';
+import { ApplicationStage } from './application-stage';
 
-/**
- * The stack that defines the application pipeline
- */
+
 export class PipelineStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
@@ -42,8 +40,10 @@ export class PipelineStack extends Stack {
     });
 
     // This is where we add the application stages
-    pipeline.addApplicationStage(new PipelineStage(this, 'PreProd', {
-      env: { region: 'eu-central-1'}
+    pipeline.addApplicationStage(new ApplicationStage(this, 'ApplicationStage', {
+      env: {
+        region: 'eu-central-1'
+      }
     }))
   }
 }
