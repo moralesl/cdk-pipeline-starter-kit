@@ -3,12 +3,15 @@ import * as codepipeline_actions from '@aws-cdk/aws-codepipeline-actions';
 import { Construct, SecretValue, Stack, StackProps } from '@aws-cdk/core';
 import { CdkPipeline, SimpleSynthAction } from "@aws-cdk/pipelines";
 
-import {config} from '../config'
 import { ApplicationStage } from './application-stage';
 
+export interface PipelineStackProps extends StackProps {
+  readonly githubRepositoryOwner: string;
+  readonly githubRepositoryName: string;
+}
 
 export class PipelineStack extends Stack {
-  constructor(scope: Construct, id: string, props?: StackProps) {
+  constructor(scope: Construct, id: string, props: PipelineStackProps) {
     super(scope, id, props);
 
     const sourceArtifact = new codepipeline.Artifact();
@@ -24,8 +27,8 @@ export class PipelineStack extends Stack {
         actionName: 'GitHub',
         output: sourceArtifact,
         oauthToken: SecretValue.secretsManager('github-token'),
-        owner: config.github.owner,
-        repo: config.github.repository,
+        owner: props.githubRepositoryOwner,
+        repo: props.githubRepositoryName,
         trigger: codepipeline_actions.GitHubTrigger.POLL,
       }),
 
