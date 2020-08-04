@@ -9,7 +9,7 @@ infrastructure/                 -- Contains all the infrastructure settings
 ├── config.ts                   -- Configurations
 └── lib/
     ├── pipeline-stack.ts       -- Setup the CDK pipeline
-    ├── application-stage.ts    -- Application stage, this becames part of the pipeline
+    ├── development-stage.ts    -- Development stage, this become part of the pipeline. Could be used for testing, production, ... stages
     └── application-stack.ts    -- The application stack
 ```
 

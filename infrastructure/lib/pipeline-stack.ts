@@ -3,7 +3,7 @@ import * as codepipeline_actions from '@aws-cdk/aws-codepipeline-actions';
 import { Construct, SecretValue, Stack, StackProps } from '@aws-cdk/core';
 import { CdkPipeline, SimpleSynthAction } from "@aws-cdk/pipelines";
 
-import { ApplicationStage } from './application-stage';
+import { DevelopmentStage } from './development-stage';
 
 export interface PipelineStackProps extends StackProps {
   readonly githubRepositoryOwner: string;
@@ -42,8 +42,8 @@ export class PipelineStack extends Stack {
        }),
     });
 
-    // This is where we add the application stages
-    pipeline.addApplicationStage(new ApplicationStage(this, 'ApplicationStage', {
+    // This is where you can add additional application stages
+    pipeline.addApplicationStage(new DevelopmentStage(this, 'DevelopmentStage', {
       env: {
         region: 'eu-central-1'
       }
