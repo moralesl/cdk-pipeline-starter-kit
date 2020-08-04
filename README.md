@@ -1,4 +1,7 @@
 # CDK Pipeline starter kit
+
+Starter kit for CDK pipelines.
+
 ## Prerequisites
 To have AWS CodePipeline read from this GitHub repo, you also need to have a [GitHub personal access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) stored as a plaintext secret (not a JSON secret) in AWS Secrets Manager under the name `github-token`.
 
