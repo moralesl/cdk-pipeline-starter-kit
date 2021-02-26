@@ -16,7 +16,7 @@ export class PipelineStack extends Stack {
 
     const sourceArtifact = new codepipeline.Artifact();
     const cloudAssemblyArtifact = new codepipeline.Artifact();
- 
+
     const pipeline = new CdkPipeline(this, 'CdkPipelineStarterKit', {
       // The pipeline name
       pipelineName: 'CdkPipelineStarterKit',
@@ -36,17 +36,13 @@ export class PipelineStack extends Stack {
        synthAction: SimpleSynthAction.standardNpmSynth({
          sourceArtifact,
          cloudAssemblyArtifact,
-         
+
          // We need a build step to compile the TypeScript Lambda
          buildCommand: 'npm run build'
        }),
     });
 
     // This is where you can add additional application stages
-    pipeline.addApplicationStage(new DevelopmentStage(this, 'DevelopmentStage', {
-      env: {
-        region: 'eu-central-1'
-      }
-    }))
+    pipeline.addApplicationStage(new DevelopmentStage(this, 'DevelopmentStage'))
   }
 }

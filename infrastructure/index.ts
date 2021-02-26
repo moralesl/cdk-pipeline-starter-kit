@@ -10,6 +10,9 @@ const app = new cdk.App();
 new PipelineStack(app, 'CdkPipelineStarterKitStack', {
     githubRepositoryOwner: config.github.owner,
     githubRepositoryName: config.github.repository,
+    env: {
+      region: 'eu-central-1'
+    }
 });
 
 app.synth()

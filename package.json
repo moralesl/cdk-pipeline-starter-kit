@@ -1,9 +1,6 @@
 {
   "name": "cdk-pipeline-starter-kit",
   "version": "0.1.0",
-  "bin": {
-    "cdk-pipeline-starter-kit": "infrastructure.ts"
-  },
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
