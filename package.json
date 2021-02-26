@@ -1,5 +1,5 @@
 {
-  "name": "eks-quarkus-demo",
+  "name": "cdk-pipeline-starter-kit",
   "version": "0.1.0",
   "bin": {
     "cdk-pipeline-starter-kit": "infrastructure.ts"
@@ -11,21 +11,21 @@
     "cdk": "cdk"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.56.0",
-    "@aws-cdk/aws-codepipeline": "^1.56.0",
-    "@aws-cdk/aws-codepipeline-actions": "^1.56.0",
-    "@aws-cdk/aws-lambda": "^1.56.0",
-    "@aws-cdk/pipelines": "^1.56.0",
-    "@types/jest": "^25.2.1",
-    "@types/node": "10.17.5",
-    "aws-cdk": "1.56.0",
-    "jest": "^25.5.0",
-    "ts-jest": "^25.3.1",
-    "ts-node": "^8.1.0",
-    "typescript": "~3.7.2"
+    "@aws-cdk/assert": "1.91.0",
+    "@aws-cdk/aws-codepipeline": "1.91.0",
+    "@aws-cdk/aws-codepipeline-actions": "1.91.0",
+    "@aws-cdk/aws-lambda": "1.91.0",
+    "@aws-cdk/pipelines": "1.91.0",
+    "@types/jest": "^26.0.10",
+    "@types/node": "10.17.27",
+    "aws-cdk": "1.91.0",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.2.0",
+    "ts-node": "^9.0.0",
+    "typescript": "~3.9.7"
   },
   "dependencies": {
-    "@aws-cdk/core": "1.56.0",
+    "@aws-cdk/core": "1.91.0",
     "source-map-support": "^0.5.16"
   }
 }
