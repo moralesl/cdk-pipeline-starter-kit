@@ -19,7 +19,7 @@ infrastructure/                 -- Contains all the infrastructure settings
 ## Usage
 ### Bootstrap your environment
 ```
-cdk bootstrap --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess
+cdk bootstrap
 ```
 
 ### Initial deployment

@@ -1,4 +1,5 @@
-import { Construct, Stage, StageProps } from '@aws-cdk/core';
+import { Construct } from "constructs";
+import { Stage, StageProps } from "aws-cdk-lib";
 import { ApplicationStack } from './application-stack';
 
 export class DevelopmentStage extends Stage {
