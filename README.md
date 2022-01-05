@@ -3,7 +3,7 @@
 Starter kit for CDK pipelines.
 
 ## Prerequisites
-To have AWS CodePipeline read from this GitHub repo, you need to have a [GitHub connection](https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-github.html) set up. For more details on the underlying CDK code, see [GitHub, GitHub Enterprise, BitBucket using a connection](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.pipelines-readme.html#github-github-enterprise-bitbucket-using-a-connection).
+To have AWS CodePipeline read from this GitHub repo, you also need to have a [GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) stored as a plaintext secret (not a JSON secret) in [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) under the name github-token. For instructions, see [Tutorial: Creating and Retrieving a Secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html). The token should have the scopes `repo` and `admin:repo_hook`.
 
 Add your details in the `infrastructure/config.ts` file.
 

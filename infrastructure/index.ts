@@ -9,7 +9,6 @@ const app = new cdk.App();
 const stack = new PipelineStack(app, "CdkPipelineStarterKitStack", {
   githubRepositoryOwner: config.github.owner,
   githubRepositoryName: config.github.repository,
-  codepipelineConnectionArn: config.codepipeline.connectionArn,
 
   env: {
     account: process.env.CDK_DEFAULT_ACCOUNT,
