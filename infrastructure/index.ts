@@ -15,4 +15,4 @@ new PipelineStack(app, 'CdkPipelineStarterKitStack', {
     }
 });
 
-app.synth()
+cdk.Tags.of(stack).add("Project", "CDK Pipeline Starter Kit");
