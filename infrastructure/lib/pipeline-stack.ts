@@ -20,7 +20,7 @@ export class PipelineStack extends Stack {
     const pipeline = new CodePipeline(this, "Pipeline", {
       pipelineName: "CdkPipelineStarterKit",
       synth: new ShellStep("SynthStep", {
-        input: CodePipelineSource.gitHub(getRepositoryString(props), "master"),
+        input: CodePipelineSource.gitHub(getRepositoryString(props), "main"),
         commands: ["npm ci", "npm run build", "npx cdk synth"],
       }),
     });
