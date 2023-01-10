@@ -1,6 +1,6 @@
-# CDK Pipeline starter kit
+# {{project_name}}
 
-Starter kit for CDK pipelines.
+Built with the [Starter kit for CDK pipelines](https://github.com/moralesl/cdk-pipeline-starter-kit).
 
 ## Prerequisites
 To have AWS CodePipeline read from this GitHub repo, you also need to have a [GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) stored as a plaintext secret (not a JSON secret) in [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) under the name github-token. For instructions, see [Tutorial: Creating and Retrieving a Secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html). The token should have the scopes `repo` and `admin:repo_hook`.
@@ -12,13 +12,20 @@ Add your details in the `infrastructure/config.ts` file.
 infrastructure/                 -- Contains all the infrastructure settings
 ├── index.ts                    -- Base setup for the underlying stack
 ├── config.ts                   -- Configurations
-└── lib/
+└── pipeline/
     ├── pipeline-stack.ts       -- Setup the CDK pipeline
     ├── development-stage.ts    -- Development stage, this become part of the pipeline. Could be used for testing, production, ... stages
     └── application-stack.ts    -- The application stack
 ```
 
 ## Usage
+This project relies on [copier](https://copier.readthedocs.io/en/latest/), for installation instructions look [here](https://github.com/copier-org/copier/#installation).
+
+### Scaffold your project
+```
+copier https://github.com/moralesl/cdk-pipeline-starter-kit path/to/destination
+```
+
 ### Install dependencies
 ```
 npm install

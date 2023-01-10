@@ -1,0 +1,29 @@
+# questions
+project_name:
+  type: str
+  placeholder: CDK Pipeline Starter Kit
+  help: An awesome project needs an awesome name. Tell me yours.
+  validator: "{% if not project_name %}Please tell your project name{% endif %}"
+
+github_user_name:
+  type: str
+  placeholder: moralesl
+  help: What is your Github user name?
+  validator: >-
+    {% if not (github_user_name | regex_search('^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$')) %}
+    * Github username may only contain alphanumeric characters or hyphens, cannot have multiple consecutive hyphens, cannot begin or end with a hyphen and maximum is 39 characters.
+    {% endif %}
+
+github_repository_name:
+  type: str
+  placeholder: cdk-pipeline-starter-kit
+  help: What is your Github repository name for this project?
+  validator: >-
+    {% if not (github_repository_name | regex_search('^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$')) %}
+    * Github repository name may only contain alphanumeric characters or hyphens, cannot have multiple consecutive hyphens, cannot begin or end with a hyphen and maximum is 39 characters.
+    {% endif %}
+
+github_default_branch:
+  type: str
+  default: main
+  help: What is the name of your default branch?
