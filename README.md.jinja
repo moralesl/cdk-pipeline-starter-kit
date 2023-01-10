@@ -1,6 +1,11 @@
-# CDK Pipelines Starter Kit
+# {{project_name}}
 
 Built with the [Starter kit for CDK pipelines](https://github.com/moralesl/cdk-pipeline-starter-kit).
+
+## Prerequisites
+To have AWS CodePipeline read from this GitHub repo, you also need to have a [GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) stored as a plaintext secret (not a JSON secret) in [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) under the name github-token. For instructions, see [Tutorial: Creating and Retrieving a Secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html). The token should have the scopes `repo` and `admin:repo_hook`.
+
+Add your details in the `infrastructure/config.ts` file.
 
 ## Project structure
 ```
@@ -14,13 +19,20 @@ infrastructure/                 -- Contains all the infrastructure settings
 ```
 
 ## Usage
-This project relies on [copier](https://copier.readthedocs.io/en/latest/), for installation instructions look [here](https://github.com/copier-org/copier/#installation).
+### Install dependencies
+```
+npm install
+```
 
-### Scaffold your project
+### Bootstrap your environment
 ```
-copier https://github.com/moralesl/cdk-pipeline-starter-kit path/to/destination
+cdk bootstrap
 ```
-Afterwards take a look into the generated [README.md](README.md.jinja) for further instructions to setup the pipeline.
+
+### Initial deployment
+```
+cdk deploy
+```
 
 
 ## Resources

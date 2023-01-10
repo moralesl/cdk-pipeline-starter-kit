@@ -27,3 +27,7 @@ github_default_branch:
   type: str
   default: main
   help: What is the name of your default branch?
+
+_exclude:
+  # Exlude the project Readme.MD
+  - README.md
