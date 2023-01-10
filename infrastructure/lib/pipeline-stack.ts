@@ -27,6 +27,11 @@ export class PipelineStack extends Stack {
     });
 
     // This is where you can add additional application stages
-    pipeline.addStage(new DevelopmentStage(this, "DevelopmentStage"));
+    pipeline.addStage(new DevelopmentStage(this, "DevelopmentStage", {
+      env: {
+        account: process.env.CDK_DEFAULT_ACCOUNT,
+        region: process.env.CDK_DEFAULT_REGION,
+      },
+    }));
   }
 }
