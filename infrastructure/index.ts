@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import "source-map-support/register";
 import * as cdk from "aws-cdk-lib";
 import { PipelineStack } from "./lib/pipeline-stack";
 
@@ -17,4 +16,4 @@ const stack = new PipelineStack(app, "CdkPipelineStarterKitStack", {
   },
 });
 
-cdk.Tags.of(stack).add("Project", "CDK Pipeline Starter Kit");
+cdk.Tags.of(stack).add("Template", "moralesl/cdk-pipeline-starter-kit");
