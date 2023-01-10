@@ -29,5 +29,6 @@ github_default_branch:
   help: What is the name of your default branch?
 
 _exclude:
-  # Exlude the project Readme.MD
+  # Exlude the project README.md
   - README.md
+  - .git/*
