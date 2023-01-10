@@ -2,6 +2,9 @@
 
 Built with the [Starter kit for CDK pipelines](https://github.com/moralesl/cdk-pipeline-starter-kit).
 
+## Architecture overview
+![CDK Pipeline architecture overview](img/Architecture-Overview.png)
+
 ## Project structure
 ```
 infrastructure/                 -- Contains all the infrastructure settings
