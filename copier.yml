@@ -28,7 +28,11 @@ github_default_branch:
   default: main
   help: What is the name of your default branch?
 
-_exclude:
-  # Exlude the project README.md
-  - README.md
-  - .git/*
+aws_cdk_version:
+  type: str
+  default: 2.59.0
+  help: Which AWS CDK version do you want to use?
+  validator: >-
+    {% if not (aws_cdk_version | regex_search('^[~^]?2+(\.\d+)?(\.\d+)?$')) %}
+    * Please select a valid AWS CDK release version 
+    {% endif %}
