@@ -1,6 +1,7 @@
 # CDK Pipelines Starter Kit
 
-Built with the [Starter kit for CDK pipelines](https://github.com/moralesl/cdk-pipeline-starter-kit).
+Starter kit for [AWS Cloud Development Kit (AWS CDK)](https://aws.amazon.com/cdk/) pipelines. It generates a single-account CDK Pipeline project.
+For details how to extend it to multi-account setups, please take a look at the [resources](#resources).
 
 ## Architecture overview
 ![CDK Pipeline architecture overview](img/Architecture-Overview.png)
@@ -27,4 +28,5 @@ Afterwards take a look into the generated [README.md](README.md.jinja) for furth
 
 
 ## Resources
+* [Continuous integration and delivery (CI/CD) using CDK Pipelines](https://docs.aws.amazon.com/cdk/v2/guide/cdk_pipeline.html)
 * [CDK Pipelines: Continuous delivery for AWS CDK applications](https://aws.amazon.com/blogs/developer/cdk-pipelines-continuous-delivery-for-aws-cdk-applications/)
