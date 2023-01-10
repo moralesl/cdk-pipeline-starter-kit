@@ -1,4 +1,4 @@
-# {{project_name}}
+# CDK Pipelines Starter Kit
 
 Built with the [Starter kit for CDK pipelines](https://github.com/moralesl/cdk-pipeline-starter-kit).
 
