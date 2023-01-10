@@ -7,6 +7,7 @@ import { DevelopmentStage } from "./development-stage";
 export interface PipelineStackProps extends StackProps {
   readonly githubRepositoryOwner: string;
   readonly githubRepositoryName: string;
+  readonly githubRepositoryBranch: string;
 }
 
 const getRepositoryString = (pipelineStackProps: PipelineStackProps): string => {
@@ -20,7 +21,7 @@ export class PipelineStack extends Stack {
     const pipeline = new CodePipeline(this, "Pipeline", {
       pipelineName: "CdkPipelineStarterKit",
       synth: new ShellStep("SynthStep", {
-        input: CodePipelineSource.gitHub(getRepositoryString(props), "master"),
+        input: CodePipelineSource.gitHub(getRepositoryString(props), props.githubRepositoryBranch),
         commands: ["npm ci", "npm run build", "npx cdk synth"],
       }),
     });
