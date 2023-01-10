@@ -5,7 +5,7 @@ import { PipelineStack } from "./pipeline/pipeline-stack";
 import { config } from "./config";
 
 const app = new cdk.App();
-const stack = new PipelineStack(app, "{{project_name}}", {
+const stack = new PipelineStack(app, "{{"".join(project_name.split())}}Stack", {
   githubRepositoryOwner: config.github.owner,
   githubRepositoryName: config.github.repository,
   githubRepositoryBranch: config.github.branch,
