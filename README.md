@@ -19,6 +19,11 @@ infrastructure/                 -- Contains all the infrastructure settings
 ```
 
 ## Usage
+### Install dependencies
+```
+npm install
+```
+
 ### Bootstrap your environment
 ```
 cdk bootstrap
