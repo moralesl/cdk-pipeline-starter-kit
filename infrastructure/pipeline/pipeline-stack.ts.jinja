@@ -22,6 +22,9 @@ export class PipelineStack extends Stack {
       pipelineName: "CdkPipelineStarterKit",
       synth: new ShellStep("SynthStep", {
         input: CodePipelineSource.gitHub(getRepositoryString(props), props.githubRepositoryBranch),
+
+        // Update npm before running commands, see also https://stackoverflow.com/questions/74801639/running-npm-ci-in-aws-codepipeline-fails-cannot-read-property-aws-cdk-lib
+        installCommands: ['npm version && npm i -g npm@latest'],
         commands: ["npm ci", "npm run build", "npx cdk synth"],
       }),
     });
