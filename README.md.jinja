@@ -5,8 +5,6 @@ Built with the [Starter kit for CDK pipelines](https://github.com/moralesl/cdk-p
 ## Prerequisites
 To have AWS CodePipeline read from this GitHub repo, you also need to have a [GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) stored as a plaintext secret (not a JSON secret) in [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) under the name github-token. For instructions, see [Tutorial: Creating and Retrieving a Secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html). The token should have the scopes `repo` and `admin:repo_hook`.
 
-Add your details in the `infrastructure/config.ts` file.
-
 ## Project structure
 ```
 infrastructure/                 -- Contains all the infrastructure settings
@@ -22,6 +20,20 @@ infrastructure/                 -- Contains all the infrastructure settings
 ### Install dependencies
 ```
 npm install
+```
+
+### Initialize your local repository
+```
+git init
+git add .
+git commit -m "Initial commit"
+```
+
+### Push to Github
+```
+git remote add origin https://github.com/{{github_user_name}}/{{github_repository_name}}.git
+git branch -M {{github_default_branch}}
+git push -u origin {{github_default_branch}}
 ```
 
 ### Bootstrap your environment
